@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/Character_Sheet.css">
+    <script type="text/javascript" src="js/personal_stats.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+    <script type="text/javascript" src="js/hp_bar_gestion.js"></script>
+    <script type="text/javascript" src="js/dice_event.js"></script>
+    <title>Character Sheet</title>
+</head>
+<body>
+    <section>
+        <div class="titre">
+            <h1>CyberPunk 2020</h1>        
+            <h2>Fiche de personnage de <span id="nom_perso"></span> ALIAS "<span id="pseudo"></span>"</h2>
+        </div>
+    </section>
+    <section class="container">
+        <div class="flex_box" id="flex_box_1">
+            <div>
+                <h3>Classe : <span id="classe"></span></h3>
+                <h4>Statistiques</h4>
+                <div class="container_left">
+                    <ul class="flex_box_left">
+                        <li>INT : 
+                            <span id="INT"></span> 
+                            <button type="button" name="int_rand" onclick="dice_INT()">Roll</button>
+                            <span id="roll_int">
+                        </li>
+                        <li>REF : 
+                            <span id="REF"></span>
+                            <button type="button" name="ref_rand" onclick="dice_REF()">Roll</button>
+                            <span id="roll_ref"></span>
+                        </li>
+                        <li>TECH : 
+                            <span id="TECH"></span>
+                            <button type="button" name="tech_rand" onclick="dice_TECH()">Roll</button>
+                            <span id="roll_tech"></span>
+                        </li>
+                        <li>SF : 
+                            <span id="SF"></span>
+                            <button type="button" name="sf_rand" onclick="dice_SF()">Roll</button>
+                            <span id="roll_sf"></span>
+                        </li>
+                        <li>BT : 
+                            <span id="BT"></span>
+                            <button type="button" name="bt_rand" onclick="dice_BT()">Roll</button>
+                            <span id="roll_bt"></span>
+                        </li>
+                        <li>CH : 
+                            <span id="CH"></span>
+                        </li>
+                        <li>MV : 
+                            <span id="MV"></span>
+                            <button type="button" name="mv_rand" onclick="dice_MV()">Roll</button>
+                            <span id="roll_mv"></span>
+                        </li>
+                        <li>CON : 
+                            <span id="CON"></span>
+                            <button type="button" name="con_rand" onclick="dice_CON()">Roll</button>
+                            <span id="roll_con"></span>
+                        </li>
+                        <li>EMP : 
+                            <span id="EMP"></span>
+                            <button type="button" name="emp_rand" onclick="dice_EMP()">Roll</button>
+                            <span id="roll_emp"></span>
+                        </li>
+                        <li>PH : 
+                            <span id="PH"></span>
+                            /
+                            <span id="PHMAX"></span>
+                        </li>
+                        <li>Course : 
+                            <span id="course"></span>
+                            m
+                        </li>
+                        <li>Saut : 
+                            <span id="saut"></span>
+                            m
+                        </li>
+                        <li>Levée : 
+                            <span id="levee"></span>
+                            Kg
+                        </li>
+                    </ul>
+                    <ul class="flex_box_left">
+                        <h4>Barre de Vie</h4>
+                        <button type="button" onclick="life_hit2()">+</button><button type="button" onclick="life_hit()">-</button>
+                        <div class="life">
+                            <div class="line_life">
+                                <div class="set-hp">
+                                    <h5>Legère</h5>
+                                    <h5></h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life1" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life2" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life3" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life4" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-hp">
+                                    <h5>Sévère</h5>
+                                    <h5></h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life5" style="background-color:green">
+
+                                        </div>
+                                        <div class="hp" id="life6" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life7" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life8" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-hp">
+                                    <h5>Critique</h5>
+                                    <h5></h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life9" style="background-color:green">
+
+                                        </div>
+                                        <div class="hp" id="life10" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life11" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life12" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-hp">
+                                    <h5>Mortelle 0</h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life13" style="background-color:green">
+
+                                        </div>
+                                        <div class="hp" id="life14" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life15" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life16" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-hp">
+                                    <h5>Mortelle 1</h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life17" style="background-color:green">
+
+                                        </div>
+                                        <div class="hp" id="life18" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life19" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life20" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_life">
+                                <div class="set-hp">
+                                    <h5>Mortelle 2</h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life21" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life22" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life23" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life24" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-hp">
+                                    <h5>Mortelle 3</h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life25" style="background-color:green">
+
+                                        </div>
+                                        <div class="hp" id="life26" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life27" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life28" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-hp">
+                                    <h5>Mortelle 4</h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life29" style="background-color:green">
+
+                                        </div>
+                                        <div class="hp" id="life30" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life31" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life32" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-hp">
+                                    <h5>Mortelle 5</h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life33" style="background-color:green">
+
+                                        </div>
+                                        <div class="hp" id="life34" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life35" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life36" style="background-color:green">
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-hp">
+                                    <h5>Mortelle 6</h5>
+                                    <div class="life_5">
+                                        <div class="hp" id="life37" style="background-color:green">
+
+                                        </div>
+                                        <div class="hp" id="life38" style="background-color:green">
+                                            
+                                        </div>
+                                        <div class="hp" id="life39" style="background-color:green">
+                                        
+                                        </div>
+                                        <div class="hp" id="life40" style="background-color:green">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul> 
+                            <div class="ujo">
+                                <div class="ujo_left">
+                                    <h4>Arme Principal</h4>
+                                    Cadence de Tir : <span id="CDT_weapon"></span></br>
+                                    Chargeur : <span id="chargeur"></span></br>
+                                    Balle restantes : <span id="left_ammo"></span></br>
+                                    <button type="button" id="tir" onclick="tirer()">Tirer</button><button type="button" id="reload" onclick="reload()">Recharger</button>
+                               </div>
+                               <div class="ujo_right">
+                                   <h4>Portée</h4>
+                                   <input type="radio" id="check_courte" name="range">
+                                    <label for="contactChoice1">Courte</label>
+
+                                    <input type="radio" id="check_moyenne" name="range">
+                                    <label for="contactChoice2">Moyenne</label>
+
+                                    <input type="radio" id="check_longue" name="range">
+                                    <label for="contactChoice3">Longue</label>
+                                    
+                                    <input type="radio" id="check_extreme" name="range">
+                                    <label for="contactChoice3">Extrème</label>
+                               </div>
+                            </div>
+                            <div class="ujo">
+                                    <div class="ujo_left">
+                                        <h4>Arme Secondaire</h4>
+                                        Cadence de Tir : <span id="CDT_weapon2"></span></br>
+                                        Chargeur : <span id="chargeur2"></span></br>
+                                        Balle restantes : <span id="left_ammo2"></span></br>
+                                        <button type="button" id="tir2" onclick="tirer2()">Tirer</button><button type="button" id="reload" onclick="reload2()">Recharger</button>
+                                   </div>
+                                   <div class="ujo_right">
+                                       <h4>Portée</h4>    
+                                       <input type="radio" id="check_courte_secondary" name="range_secondary">
+                                        <label for="contactChoice1">Courte</label>
+    
+                                        <input type="radio" id="check_moyenne_secondary" name="range_secondary">
+                                        <label for="contactChoice2">Moyenne</label>
+    
+                                        <input type="radio" id="check_longue_secondary" name="range_secondary">
+                                        <label for="contactChoice3">Longue</label>
+                                        
+                                        <input type="radio" id="check_extreme_secondary" name="range_secondary">
+                                        <label for="contactChoice3">Extrème</label>
+                                   </div>
+                                </div>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="localisation">
+                <table>
+                <tr>
+                    <td>Localisation</td>
+                    <td>Tête</td>
+                    <td>Torse</td>
+                    <td>Bras D</td>
+                    <td>Bras G</td>
+                    <td>Jambe D</td>
+                    <td>Jambe G</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>1</td>
+                    <td>2-4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7-8</td>
+                    <td>9-10</td>
+                </tr>
+                <tr>
+                    <td>Armure PA</td>
+                    <td>.....</td>
+                    <td>.....</td>
+                    <td>.....</td>
+                    <td>.....</td>
+                    <td>.....</td>
+                    <td>.....</td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        <div class="flex_box">
+            <div class="inventaire">
+                <h3>Inventaire :</h3>
+                <div class="bag">
+                    <table class="inventory">
+                        <tr>
+                            <td>Armes</td>
+                            <td>Armures</td>
+                            <td>Objets</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tooltip">Tronçonneuse de l'Apocalypse
+                                    <span class="tooltiptext" id="tips"></span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tooltip">Death Armor +18
+                                    <span class="tooltiptext"></span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tooltip">Cursed Bible
+                                    <span class="tooltiptext"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>.....</td>
+                            <td>.....</td>
+                            <td>.....</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="notes">
+                <h4>Notes :</h4>
+                <div class="area_note">
+                    <textarea class="nota" placeholder="Attention, les notes ne survivent pas aux Actualisations!"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="first_skill_line">
+        <div class="oji"><span onclick='deploy_close("skill")'>Ouvrir/Fermer</span></div>
+        <div class="others" id="skill">
+            <h3>Compétences</h3>
+            <ul class="skill_list">
+                <li class="skill_cat">Capacités Spéciales
+                    <ul class="skill">
+                        <li>Autorité (Cop)</li>
+                        <li>Com. Charismatique (Rocker)</li>
+                        <li>Crédibilité (Média)</li>
+                        <li>Famille (Nomade)</li>
+                        <li>Indic (Fixer)</li>
+                        <li>Interface (NetRunner)</li>
+                        <li>Ressources (Corporate)</li>
+                        <li>Sens du Combat (Solo)</li>
+                        <li>Système D (Techie)</li>
+                        <li>Technique Médical (Medtech)</li>
+                    </ul>
+                </li>
+                <li class="skill_cat">BT
+                    <ul class="skill">
+                        <li>Habillement & Style </li>
+                        <li>Look</li>
+                    </ul>
+                </li>
+                <li class="skill_cat">CON
+                    <ul class="skill">
+                        <li>Endurance</li>
+                        <li>Force</li>
+                        <li>Natation</li>
+                    </ul>
+                </li>
+                <li class="skill_cat">EMP
+                    <ul class="skill">
+                        <li>Baratin et Persuasion</li>
+                        <li>Commandement</li>
+                        <li>Interview</li>
+                        <li>Perception Humaine</li>
+                        <li>Performance</li>
+                        <li>Séduction</li>
+                        <li>Social</li>
+                    </ul>
+                </li>
+                <li class="skill_cat">INT
+                    <ul class="skill">
+                        <li>Anthropologie</li>
+                        <li>Bibliothèque</li>
+                        <li>Biologie</li>
+                        <li>Botanique</li>
+                        <li>Chimie</li>
+                        <li>Composition</li>
+                        <li>Connaissance des Systèmes</li>
+                        <li>Diagnostic</li>
+                        <li>Éducation</li>
+                        <li>Enseignement</li>
+                        <li>Expert</li>
+                        <li>Géologie</li>
+                        <li>Gestion</li>
+                        <li>Histoire</li>
+                        <li>Investissement</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="skill_list">
+                <ul>
+                    <li>Jeu</li>
+                    <li>Langue</li>
+                    <li>Langue</li>
+                    <li>Langue</li>
+                    <li>Mathématiques</li>
+                    <li>Perception</li>
+                    <li>Physique</li>
+                    <li>Programmation</li>
+                    <li>Se cacher/Semer</li>
+                    <li>Suivre/Pister</li>
+                    <li>Survie</li>
+                    <li>Zoologie</li>
+                </ul>
+                <li class="skill_cat">SF
+                    <ul class="skill">
+                        <li>Connaisance de la Rue</li>
+                        <li>Éloquence</li>
+                        <li>Interrogatoire</li>
+                        <li>Intimidation</li>
+                        <li>Résister à la Torture ou aux Drogues</li>
+                    </ul>
+                </li>
+            <li class="skill_cat">REF
+                <ul class="skill">
+                    <li>Armes Automatiques</li>
+                    <li>Armes Lourdes</li>
+                    <li>Arts Martiaux 1</li>
+                    <li>Arts Martiaux 2</li>
+                    <li>Arts Martiaux 3</li>
+                    <li>Athlétisme</li>
+                    <li>Conduire Automobiles</li>
+                    <li>Conduire Engins Lourds</li>
+                    <li>Danse</li>
+                    <li>Discrètion (2)</li>
+                    <li>Escrime</li>
+                    <li>Esquive</li>
+                    <li>Fusil</li>
+                    <li>Lutte</li>
+                    <li>Mêlée</li>
+                    <li>Moto</li>
+                    <li>Piloter Avion (2)</li>
+                    <li>Piloter Dirigeable (2)</li>
+                    <li>Piloter Gyro (3)</li>
+                    <li>Piloter Jet (3)</li>
+                    <li>Pistolet</li>
+                    <li>Tir à l'Arc</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="skill_list">
+            <li class="skill_cat">TECH
+                <ul class="skill">
+                    <li>Aérotech (2)</li>
+                    <li>Armurier (2)</li>
+                    <li>AV Tech (3)</li>
+                    <li>Concevoir Cyberdeck (2)</li>
+                    <li>Contrefaçon</li>
+                    <li>Crocheter</li>
+                    <li>Cyberdeck (2)</li>
+                    <li>Déguisement</li>
+                    <li>Electronique</li>
+                    <li>Explosifs (2)</li>
+                    <li>Gentech (2)</li>
+                    <li>Graphisme</li>
+                    <li>Gyrotech (2)</li>
+                    <li>Musique</li>
+                    <li>Pharmacologie (2)</li>
+                    <li>Photos et films</li>
+                    <li>Pickpocket</li>
+                    <li>Premiers Soins</li>
+                    <li>Sécurité Électronique (2)</li>
+                    <li>Utilisation Caisson Cryo</li>
+                    <li>Autre</li>
+                    <li>Autre</li>
+                    <li>Autre</li>
+                    <li>Autre</li>
+                    <li>Autre</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <section class="first_skill_line">
+        <div class="oji"><span onclick='deploy_close("skill2")'>Ouvrir/Fermer</span></div>
+        <div class="others" id="skill2">
+            <h3>Débloquées</h3>
+            <ul class="skill_list">
+                <li class="skill_cat">Capacités Spéciales
+                    <ul class="skill">
+                        <li>Système D (Techie) = <span id="systeme_d"></span>
+                            <button type="button" name="systeme_d_rand" onclick="dice_systeme_d()">Roll</button>
+                            <span id="roll_systeme_d"></span></li>
+                    </ul>
+                </li>
+                <li class="skill_cat">EMP
+                    <ul class="skill">
+                        <li>Baratin et Persuasion = <span id="b_and_p"></span>
+                            <button type="button" name="b_and_p_rand" onclick="dice_b_and_p()">Roll</button>
+                            <span id="roll_b_and_p"></span></li>
+                        <li>Proxénétisme = <span id="proxenetisme"></span>
+                            <button type="button" name="proxenetisme_rand" onclick="dice_proxenetisme()">Roll</button>
+                            <span id="roll_proxenetisme"></span></li>
+                        <li>Séduction = <span id="seduction"></span>
+                            <button type="button" name="seduction_rand" onclick="dice_seduction()">Roll</button>
+                            <span id="roll_seduction"></span></li>
+                    </ul>
+                </li>
+                <li class="skill_cat">INT
+                    <ul class="skill">
+                        <li>Éducation = <span id="education"></span>
+                            <button type="button" name="education_rand" onclick="dice_education()">Roll</button>
+                            <span id="roll_education"></span></li>
+                        <li>Enseignement = <span id="enseignement"></span>
+                            <button type="button" name="enseignement_rand" onclick="dice_enseignement()">Roll</button>
+                            <span id="roll_enseignement"></span></li>
+                        <li>Perception = <span id="perception"></span>
+                            <button type="button" name="perception_rand" onclick="dice_perception()">Roll</button>
+                            <span id="roll_perception"></span></li>
+                    </ul>
+                </li>
+                <li class="skill_cat">REF
+                    <ul class="skill">
+                        <li>Tae Kwon Do (4) = <span id="art_martial"></span>
+                            <button type="button" name="art_martial_rand" onclick="dice_art_martial()">Roll</button>
+                            <span id="roll_art_martial"></span></li>
+                        <li>Fusil = <span id="fusil"></span>
+                            <button type="button" name="fusil_rand" onclick="dice_fusil()">Roll</button>
+                            <span id="roll_fusil"></span></li>
+                        <li>Pistolet = <span id="pistolet"></span>
+                            <button type="button" name="pistolet_rand" onclick="dice_pistolet()">Roll</button>
+                            <span id="roll_pistolet"></span></li>
+                    </ul>
+                </li>
+                <li class="skill_cat">TECH
+                    <ul class="skill">
+                        <li>Contre-façon = <span id="contrefaçon"></span>
+                            <button type="button" name="contrefaçon_rand" onclick="dice_contrefaçon()">Roll</button>
+                            <span id="roll_contrefaçon"></span></li>
+                        <li>Crocheter = <span id="crocheter"></span>
+                            <button type="button" name="crocheter_rand" onclick="dice_crocheter()">Roll</button>
+                            <span id="roll_crocheter"></span></li>
+                        <li>Cyberdeck (2) = <span id="cyberdeck"></span>
+                            <button type="button" name="cyberdeck_rand" onclick="dice_cyberdeck()">Roll</button>
+                            <span id="roll_cyberdeck"></span></li>
+                        <li>Déguisement = <span id="deguisement"></span>
+                            <button type="button" name="deguisement_rand" onclick="dice_deguisement()">Roll</button>
+                            <span id="roll_deguisement"></span></li>
+                        <li>Electronique = <span id="electronique"></span>
+                            <button type="button" name="electronique_rand" onclick="dice_electronique()">Roll</button>
+                            <span id="roll_electronique"></span></li>
+                        <li>Explosifs (2) = <span id="explosifs"></span>
+                            <button type="button" name="explosifs_rand" onclick="dice_explosifs()">Roll</button>
+                            <span id="roll_explosifs"></span></li>
+                        <li>Gentech (2) = <span id="gentech"></span>
+                            <button type="button" name="gentech_rand" onclick="dice_gentech()">Roll</button>
+                            <span id="roll_gentech"></span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="second_skill_line">
+        <div class="oji"><span onclick='deploy_close("skill3")'>Ouvrir/Fermer</span></div>
+        <div class="others" id="skill3">
+            <h3>Famille</h3>
+                <ul classs"skill_list">
+                    <li class="skill_cat">Situation parentale
+                        <ul class="skill">
+                            <li>Parents = <span id="family_story"></span></li>
+                            <li>Status = <span id ="parents_stat"></span></li>
+                            <li>Situation financière = <span id="parents_job"></span></li>
+                        </ul>
+                    </li>
+                    <li class="skill_cat">Situation fraternelle
+                        <ul class="skill">
+                            <li>Nombre de soeurs = <span id="sisters"></span></li>
+                            <li>Nombre de frères = <span id="brothers"></span></li>
+                        </ul>
+                    </li>
+                    <li class="skill_cat">Situation parentale personnelle
+                        <ul class="skill">
+                            <li>Nombre d'enfants = <span id="numb_child"></span></li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+        </section>
+        </section>
+        <section class="second_skill_line">
+            <div class="oji"><span onclick='deploy_close("skill4")'>Ouvrir/Fermer</span></div>
+            <div class="others" id="skill4">
+                <h3>Description personnage</h3>
+                <ul class="skill_list">
+                    <li class="skill_cat">Apparence
+                        <ul class="skill">
+                            <li>Vêtements = <span id="habillement"></span></li>
+                            <li>Coiffure = <span id="coiffure"></span></li>
+                            <li>Signe particulier = <span id="signe"></span></li>
+                            <li>Ethnie = <span id="ethnie"></span></li>
+                            <li>Langue parlée = <span id="langue"></span></li>
+                        </ul>
+                    </li>
+                    <li class="skill_cat">Motivation
+                        <ul class="skill">
+                            <li>Caractère = <span id="caractere"></span></li>
+                            <li>Ce qu'il aime = <span id="love"></span></li>
+                            <li>La chose la plus importante = <span id="most_important_thing"></span></li>
+                            <li>L'objet le plus important = <span id="most_important_item"></span></li>
+                            <li>Ce qu'il pense des gens = <span id="people_relation"></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </section>
+            <section class="thirst_skill_line">
+                <div class="oji"><span onclick='deploy_close("skill5")'>Ouvrir/Fermer</span></div>
+                <div class="others" id="skill5">
+                    <h3>Evènements de la vie</h3>
+                    <ul class="skill_list">
+                        <li class="skill_cat">Première année
+                            <ul class="skill">
+                                <li><span id="event_1st_year"></span></li>
+                            </ul>
+                        </li>
+                        <li class="skill_cat">Seconde année
+                            <ul class="skill">
+                                <li><span id="event_2nd_year"></span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+</body>
+</html>
+
+<script>
+// ============== Inventory ================
+
+    document.getElementById("tips").innerHTML = "Name = "+p1.name + "</br> Precision = "+ p1.precision + "</br>"+ p1.dissimulation + "</br>"+ p1.dispobilite + "</br>"+ p1.degat + "</br>"+ p1.munition
+
+</script>
+<script type="text/javascript" src="js/display_stats.js"></script>
+<script type="text/javascript" src="js/weapon_event.js"></script>
+
+

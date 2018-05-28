@@ -1,0 +1,314 @@
+:root
+{
+    --primary-color: green;
+    --secondary-color: red;
+}
+
+@font-face {
+    font-family: "BOYCOTT";
+    src: url("../font/BOYCOTT.ttf")
+}
+@font-face {
+    font-family: "Cyberverse";
+    src: url("../font/Cyberverse.otf")
+}
+
+*
+{
+    font-family: "Cyberverse";
+}
+
+html
+{
+    background-image: url("../img/city3.jpg");
+}
+
+.titre
+{
+    text-align: center;
+    color: white;
+    letter-spacing: 5px;
+    font-family: "BOYCOTT";
+    text-shadow: 2px 2px green;
+}
+
+ul
+{
+    list-style: none;
+}
+
+table
+{
+    margin-top: 50px;
+}
+
+tr
+{
+    
+    border: 1px solid black;
+    text-align: center;
+}
+
+td
+{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.others
+{
+    border: 1px solid black;
+    margin-left: 25px;
+    max-width: 800px;
+    max-height: 50px;
+    background: #3D6AA2;
+    overflow: hidden;
+    -webkit-transition:max-height 1s;
+    -moz-transition:max-height 1s;
+    -ms-transition:max-height 1s;
+    -o-transition:max-height 1s;
+    transition:max-height 1s;
+    -webkit-transition:max-width 0.75s;
+    -moz-transition:max-width 0.75s;
+    -ms-transition:max-width 0.75s;
+    -o-transition:max-width 0.75s;
+    transition:max-width 0.75s;
+    opacity: 0.8;
+}
+
+.others > h3
+{
+    text-align: center;
+}
+
+.vlavla
+{
+    max-height: 500px;
+    max-width: 800px;
+    position: static;
+    overflow: scroll;
+}
+
+.skill_cat
+{
+    font-weight: 900;
+}
+
+.skill, .skill2, skill3, skill4, skill5
+{
+    font-weight: 400;
+
+}
+
+.oji
+{
+    text-align: center;
+    width: 50%;
+    margin-left: 28%;
+    background-color: white;
+    opacity: 0.5;
+}
+
+.ujo
+{
+    display: flex;
+    height: 135px;
+    width: 363px;
+    margin-left: -50px;
+    margin-bottom: 45px;
+}
+
+.ujo_left
+{
+    height: 100%;
+    width: 300px;
+}
+
+.ujo_right
+{
+    margin-top: 25px;
+    height: 100%;
+    width: 150px;
+}
+
+.ujo_right > h4
+{
+    margin-top: -3px;
+}
+
+.ujo_right > input
+{
+    margin-right: 5px;
+}
+
+
+.closer
+{
+    text-align: center;
+    background-color: lightgreen;
+    border-radius: 65%;
+    margin-left: 90%;
+}
+
+.first_skill_line
+{
+    display: inline-block;
+    margin-top: 15px;
+    
+}
+
+.second_skill_line
+{
+    display: inline-block;
+    
+}
+
+.thirst_skill_line
+{
+    display: inline-block;
+    
+}
+
+.skill_list
+{
+    display: block;
+}
+
+#skill
+{
+    background: green;
+}
+
+/*#family
+{
+    background: yellowgreen;
+}
+
+#motivation
+{
+    background: greenyellow;
+}
+
+#habillement
+{
+    background: lightgreen;
+} */
+
+
+.bag
+{
+    overflow: scroll;
+    height: 300px;
+}
+
+.container
+{
+    display: flex;
+}
+
+.flex_box
+{
+    border: 1px solid black;
+    background: lightgrey;
+    opacity: 0.8;
+    width: 50%;
+    min-width: 500px;
+    margin-left: 10px;
+    margin-right: 25px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+#flex_box_1
+{
+    width: 70%;
+}
+
+.container_left
+{
+    display: flex;
+    height: 650px;
+}
+
+.flex_box_left
+{
+    border: 1px solid black;
+    width: 70%;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.line_life
+{
+    width: 100%;
+}
+.set-hp
+{
+    display: inline-block;
+    margin-top: -10px;
+
+}
+
+.hp
+{
+    display: inline-block;
+    margin-right: -5px;
+    border: 1px solid black;
+    width: 4px;
+    height: 7px;
+    background: var(--primary-color);
+}
+
+h5
+{
+    font-size: 10px;
+    width: 50px;
+    text-align: center;
+    vertical-align: center;
+    line-height: 15px;
+    margin-bottom: -5px;
+}
+
+.life_5
+{
+    margin-left: 7px;
+}
+.tooltip
+{
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext
+{
+    visibility: hidden;
+    width: 350px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    position: absolute;
+    z-index: 1;
+
+    top: 40px;
+    left: 0;
+}
+
+.tooltip:hover .tooltiptext
+{
+    visibility: visible;
+}
+
+textarea
+{
+    min-width: 200px;
+    max-width: 450px;
+    width: 350px;
+    height: 150px;
+    min-height: 50px;
+    max-height: 250px;
+    
+}
