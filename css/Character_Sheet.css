@@ -100,6 +100,11 @@ td
 
 }
 
+.kjo
+{
+    margin-left: 50px;
+}
+
 .oji
 {
     text-align: center;
@@ -129,11 +134,6 @@ td
     margin-top: 25px;
     height: 100%;
     width: 150px;
-}
-
-.ujo_right > h4
-{
-    margin-top: -3px;
 }
 
 .ujo_right > input
