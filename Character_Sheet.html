@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/Character_Sheet.css">
-    <script type="text/javascript" src="js/personal_stats.js"></script>
-    <script type="text/javascript" src="js/database.js"></script>
-    <script type="text/javascript" src="js/hp_bar_gestion.js"></script>
-    <script type="text/javascript" src="js/dice_event.js"></script>
     <title>Character Sheet</title>
 </head>
 <body>
@@ -28,7 +24,7 @@
                         <li>INT : 
                             <span id="INT"></span> 
                             <button type="button" name="int_rand" onclick="dice_INT()">Roll</button>
-                            <span id="roll_int">
+                            <span id="roll_int"></span>
                         </li>
                         <li>REF : 
                             <span id="REF"></span>
@@ -86,14 +82,13 @@
                             Kg
                         </li>
                     </ul>
-                    <ul class="flex_box_left">
+                    <div class="flex_box_left">
                         <h4>Barre de Vie</h4>
                         <button type="button" onclick="life_hit2()">+</button><button type="button" onclick="life_hit()">-</button>
                         <div class="life">
                             <div class="line_life">
                                 <div class="set-hp">
                                     <h5>Legère</h5>
-                                    <h5></h5>
                                     <div class="life_5">
                                         <div class="hp" id="life1" style="background-color:green">
                                             
@@ -111,7 +106,6 @@
                                 </div>
                                 <div class="set-hp">
                                     <h5>Sévère</h5>
-                                    <h5></h5>
                                     <div class="life_5">
                                         <div class="hp" id="life5" style="background-color:green">
 
@@ -129,7 +123,6 @@
                                 </div>
                                 <div class="set-hp">
                                     <h5>Critique</h5>
-                                    <h5></h5>
                                     <div class="life_5">
                                         <div class="hp" id="life9" style="background-color:green">
 
@@ -268,55 +261,55 @@
                                 </div>
                             </div>
                         </div>
-                        <ul> 
+                        <div class="kjo"> 
                             <div class="ujo">
                                 <div class="ujo_left">
                                     <h4>Arme Principal</h4>
-                                    Cadence de Tir : <span id="CDT_weapon"></span></br>
-                                    Chargeur : <span id="chargeur"></span></br>
-                                    Balle restantes : <span id="left_ammo"></span></br>
+                                    Cadence de Tir : <span id="CDT_weapon"></span><br/>
+                                    Chargeur : <span id="chargeur"></span><br/>
+                                    Balle restantes : <span id="left_ammo"></span><br/>
                                     <button type="button" id="tir" onclick="tirer()">Tirer</button><button type="button" id="reload" onclick="reload()">Recharger</button>
                                </div>
                                <div class="ujo_right">
                                    <h4>Portée</h4>
                                    <input type="radio" id="check_courte" name="range">
-                                    <label for="contactChoice1">Courte</label>
+                                    <label>Courte</label>
 
                                     <input type="radio" id="check_moyenne" name="range">
-                                    <label for="contactChoice2">Moyenne</label>
+                                    <label>Moyenne</label>
 
                                     <input type="radio" id="check_longue" name="range">
-                                    <label for="contactChoice3">Longue</label>
+                                    <label>Longue</label>
                                     
                                     <input type="radio" id="check_extreme" name="range">
-                                    <label for="contactChoice3">Extrème</label>
+                                    <label>Extrème</label>
                                </div>
                             </div>
                             <div class="ujo">
-                                    <div class="ujo_left">
-                                        <h4>Arme Secondaire</h4>
-                                        Cadence de Tir : <span id="CDT_weapon2"></span></br>
-                                        Chargeur : <span id="chargeur2"></span></br>
-                                        Balle restantes : <span id="left_ammo2"></span></br>
-                                        <button type="button" id="tir2" onclick="tirer2()">Tirer</button><button type="button" id="reload" onclick="reload2()">Recharger</button>
-                                   </div>
-                                   <div class="ujo_right">
-                                       <h4>Portée</h4>    
-                                       <input type="radio" id="check_courte_secondary" name="range_secondary">
-                                        <label for="contactChoice1">Courte</label>
-    
-                                        <input type="radio" id="check_moyenne_secondary" name="range_secondary">
-                                        <label for="contactChoice2">Moyenne</label>
-    
-                                        <input type="radio" id="check_longue_secondary" name="range_secondary">
-                                        <label for="contactChoice3">Longue</label>
-                                        
-                                        <input type="radio" id="check_extreme_secondary" name="range_secondary">
-                                        <label for="contactChoice3">Extrème</label>
-                                   </div>
+                                <div class="ujo_left">
+                                    <h4>Arme Secondaire</h4>
+                                    Cadence de Tir : <span id="CDT_weapon2"></span><br/>
+                                    Chargeur : <span id="chargeur2"></span><br/>
+                                    Balle restantes : <span id="left_ammo2"></span><br/>
+                                    <button type="button" id="tir2" onclick="tirer2()">Tirer</button><button type="button" id="reload2" onclick="reload2()">Recharger</button>
                                 </div>
-                        </ul>
-                    </ul>
+                                <div class="ujo_right">
+                                    <h4>Portée</h4>    
+                                    <input type="radio" id="check_courte_secondary" name="range_secondary">
+                                    <label>Courte</label>
+
+                                    <input type="radio" id="check_moyenne_secondary" name="range_secondary">
+                                    <label>Moyenne</label>
+
+                                    <input type="radio" id="check_longue_secondary" name="range_secondary">
+                                    <label>Longue</label>
+                                    
+                                    <input type="radio" id="check_extreme_secondary" name="range_secondary">
+                                    <label>Extrème</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="localisation">
@@ -458,20 +451,22 @@
                 </li>
             </ul>
             <ul class="skill_list">
-                <ul>
-                    <li>Jeu</li>
-                    <li>Langue</li>
-                    <li>Langue</li>
-                    <li>Langue</li>
-                    <li>Mathématiques</li>
-                    <li>Perception</li>
-                    <li>Physique</li>
-                    <li>Programmation</li>
-                    <li>Se cacher/Semer</li>
-                    <li>Suivre/Pister</li>
-                    <li>Survie</li>
-                    <li>Zoologie</li>
-                </ul>
+                <li>
+                    <ul>
+                        <li>Jeu</li>
+                        <li>Langue</li>
+                        <li>Langue</li>
+                        <li>Langue</li>
+                        <li>Mathématiques</li>
+                        <li>Perception</li>
+                        <li>Physique</li>
+                        <li>Programmation</li>
+                        <li>Se cacher/Semer</li>
+                        <li>Suivre/Pister</li>
+                        <li>Survie</li>
+                        <li>Zoologie</li>
+                    </ul>
+                </li>
                 <li class="skill_cat">SF
                     <ul class="skill">
                         <li>Connaisance de la Rue</li>
@@ -624,7 +619,7 @@
         <div class="oji"><span onclick='deploy_close("skill3")'>Ouvrir/Fermer</span></div>
         <div class="others" id="skill3">
             <h3>Famille</h3>
-                <ul classs"skill_list">
+                <ul class="skill_list">
                     <li class="skill_cat">Situation parentale
                         <ul class="skill">
                             <li>Parents = <span id="family_story"></span></li>
@@ -645,7 +640,6 @@
                     </li>
                 </ul>
         </div>
-        </section>
         </section>
         <section class="second_skill_line">
             <div class="oji"><span onclick='deploy_close("skill4")'>Ouvrir/Fermer</span></div>
@@ -691,16 +685,11 @@
                     </ul>
                 </div>
             </section>
+    <script src="js/personal_stats.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/hp_bar_gestion.js"></script>
+    <script src="js/dice_event.js"></script>
+    <script src="js/display_stats.js"></script>
+    <script src="js/weapon_event.js"></script>
 </body>
 </html>
-
-<script>
-// ============== Inventory ================
-
-    document.getElementById("tips").innerHTML = "Name = "+p1.name + "</br> Precision = "+ p1.precision + "</br>"+ p1.dissimulation + "</br>"+ p1.dispobilite + "</br>"+ p1.degat + "</br>"+ p1.munition
-
-</script>
-<script type="text/javascript" src="js/display_stats.js"></script>
-<script type="text/javascript" src="js/weapon_event.js"></script>
-
-
