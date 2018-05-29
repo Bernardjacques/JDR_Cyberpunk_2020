@@ -212,3 +212,6 @@ function shoot_secondary()
 {
     damage_calculation_secondary()
 }
+
+
+document.getElementById("tips").innerHTML = "Name = "+p1.name + "</br> Precision = "+ p1.precision + "</br>"+ p1.dissimulation + "</br>"+ p1.dispobilite + "</br>"+ p1.degat + "</br>"+ p1.munition
