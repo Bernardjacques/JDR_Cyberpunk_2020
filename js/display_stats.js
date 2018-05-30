@@ -104,11 +104,11 @@ function addclass(skill)
         //console.log(css_value)
         if(document.getElementById(skill).classList == "others")
         {
-            document.getElementById(skill).classList.add("vlavla");
+            document.getElementById(skill).classList.add("maximised_tab");
         }
         else
         {
-            document.getElementById(skill).classList.remove("vlavla");
+            document.getElementById(skill).classList.remove("maximised_tab");
         }
     }
 

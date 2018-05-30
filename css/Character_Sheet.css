@@ -81,7 +81,7 @@ td
     text-align: center;
 }
 
-.vlavla
+.maximised_tab
 {
     max-height: 500px;
     max-width: 800px;
@@ -100,12 +100,12 @@ td
 
 }
 
-.kjo
+.weapon_tab_shoot
 {
     margin-left: 50px;
 }
 
-.oji
+.personnal_tab_player
 {
     text-align: center;
     width: 50%;
@@ -114,29 +114,28 @@ td
     opacity: 0.5;
 }
 
-.ujo
+.weapon_tab
 {
     display: flex;
     height: 135px;
     width: 363px;
-    margin-left: -50px;
     margin-bottom: 45px;
 }
 
-.ujo_left
+.weapon_tab_left
 {
     height: 100%;
     width: 300px;
 }
 
-.ujo_right
+.weapon_tab_right
 {
     margin-top: 25px;
     height: 100%;
     width: 150px;
 }
 
-.ujo_right > input
+.weapon_tab_right > input
 {
     margin-right: 5px;
 }
@@ -178,22 +177,6 @@ td
 {
     background: green;
 }
-
-/*#family
-{
-    background: yellowgreen;
-}
-
-#motivation
-{
-    background: greenyellow;
-}
-
-#habillement
-{
-    background: lightgreen;
-} */
-
 
 .bag
 {
@@ -246,14 +229,12 @@ td
 .set-hp
 {
     display: inline-block;
-    margin-top: -10px;
 
 }
 
 .hp
 {
     display: inline-block;
-    margin-right: -5px;
     border: 1px solid black;
     width: 4px;
     height: 7px;
@@ -267,13 +248,13 @@ h5
     text-align: center;
     vertical-align: center;
     line-height: 15px;
-    margin-bottom: -5px;
 }
 
 .life_5
 {
     margin-left: 7px;
 }
+
 .tooltip
 {
     position: relative;
