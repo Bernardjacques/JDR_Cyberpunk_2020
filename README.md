@@ -35,4 +35,7 @@ Gestion complète de tous les aspect et jet de dés rencontré lors d'une partie
   Gestion de l'inventaire
   Gestion des lancer de dés multiple avec bonus (ex : 2 dés 6 avec un bonus de +2)
 
-
+- [X] Lancé de dé simple (Stat)
+- [X] Gestion Bar de Vie
+- [X] Gestion des Munitions
+- [X] Calcul des dégats d'une arme
