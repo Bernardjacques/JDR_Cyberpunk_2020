@@ -22,9 +22,9 @@ Cette fiche de personnage a pour but de faciliter les interactions (jets de dés
 
 ### 2. Outils mis à disposition
 
-#### 2.1 Jet de dé pour le calcul des statistiques basiques (Reflex, Intel, Consti, etc...)
-
 > Les dés ne servent qu'à faire du bruit derrière l'écran du MJ - Gary Gygax
+
+#### 2.1 Lancés de dé simple (Reflex, Intel, Consti, etc...)
 
 ex:
 ```javascript
@@ -40,5 +40,65 @@ ex:
   }
 ```
 https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/dice_event.js
+
+### 2.2 Lancé de dé multiple avec addition de Bonus
+
+ex:
+```javascript
+  function damage_calculation()
+{
+    if(document.getElementById("check_courte").checked == true)
+    {
+        let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5)+3
+        alert(rand_total + " de dégâts courte portée")
+    }
+    else if(document.getElementById("check_moyenne").checked == true)
+    {
+        let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_6 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5 + rand_dice_6)+1
+        alert(rand_total + " de dégâts moyenne portée")
+    }
+    else if(document.getElementById("check_longue").checked == true)
+    {
+        let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_6 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_7 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5 + rand_dice_6 + rand_dice_7)
+        alert(rand_total + " de dégâts longue portée")
+    }
+    else if(document.getElementById("check_extreme").checked == true)
+    {
+        let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_6 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_dice_7 = Math.round(Math.random() * (6 - 1) + 1)
+        let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5 + rand_dice_6 + rand_dice_7)+3
+        alert(rand_total + " de dégâts de portée extreme")
+    }
+    else
+    {
+        alert("Merci d'indiquer une valeur de distance");
+    }
+}
+```
+https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/weapon_event.js
+
 
 
