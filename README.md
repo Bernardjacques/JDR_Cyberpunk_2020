@@ -45,60 +45,51 @@ https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/dice_event.j
 
 ex:
 ```javascript
-  function damage_calculation()
+function shoot()
 {
-    if(document.getElementById("check_courte").checked == true)
-    {
-        let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5)+3
-        alert(rand_total + " de dégâts courte portée")
-    }
-    else if(document.getElementById("check_moyenne").checked == true)
-    {
-        let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_6 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5 + rand_dice_6)+1
-        alert(rand_total + " de dégâts moyenne portée")
-    }
-    else if(document.getElementById("check_longue").checked == true)
-    {
-        let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_6 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_7 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5 + rand_dice_6 + rand_dice_7)
-        alert(rand_total + " de dégâts longue portée")
-    }
-    else if(document.getElementById("check_extreme").checked == true)
-    {
-        let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_6 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_dice_7 = Math.round(Math.random() * (6 - 1) + 1)
-        let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5 + rand_dice_6 + rand_dice_7)+3
-        alert(rand_total + " de dégâts de portée extreme")
-    }
-    else
-    {
-        alert("Merci d'indiquer une valeur de distance");
-    }
+    let rand_dice_1 = Math.round(Math.random() * (6 - 1) + 1)
+    let rand_dice_2 = Math.round(Math.random() * (6 - 1) + 1)
+    let rand_dice_3 = Math.round(Math.random() * (6 - 1) + 1)
+    let rand_dice_4 = Math.round(Math.random() * (6 - 1) + 1)
+    let rand_dice_5 = Math.round(Math.random() * (6 - 1) + 1)
+    let rand_dice_6 = Math.round(Math.random() * (6 - 1) + 1)
+    let rand_total = (rand_dice_1 + rand_dice_2 + rand_dice_3 + rand_dice_4 + rand_dice_5 + rand_dice_6)+1
+    alert(rand_total + " de dégâts")
 }
 ```
 https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/weapon_event.js
 
+### 2.3 Gestion Bar de Vie
 
+ex:
+```javascript
 
+let var_color = 0
+
+function life_hit() 
+{
+    if(var_color == 0)
+    {
+        document.getElementById("life1").style.backgroundColor = "red";
+        var_color += 1;
+    }
+    else if(var_color == 1)
+    {
+        document.getElementById("life2").style.backgroundColor = "red";
+        var_color += 1;
+    }
+    else if(var_color == 2)
+    {
+        document.getElementById("life3").style.backgroundColor = "red";
+        var_color += 1;
+    }
+    else if(var_color == 3)
+    {
+        document.getElementById("life4").style.backgroundColor = "red";
+        var_color += 1;
+    }
+ .
+ .
+ .
+```
+https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/hp_bar_gestion.js
