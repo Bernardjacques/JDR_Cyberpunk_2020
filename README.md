@@ -1,17 +1,17 @@
 # JDR_Cyberpunk_2020
 
 
-Cyberpunk 2020 - Fiche de personnage interactive
+## Cyberpunk 2020 - Fiche de personnage interactive
+![Preview of CyberPunk2020](https://raw.githubusercontent.com/Bernardjacques/JDR_Cyberpunk_2020/master/img/Preview_CyberPunk2020.png)
 
 
-
-1.
+### 1.
 Cette fiche de personnage a pour but de faciliter les interactions (jets de dés, calculs) entre les joueurs d'une partie de jeu de rôle.
 
-2.
+### 2.
 Outils mis à disposition
 
-2.1
+#### 2.1
 Jet de dé pour le calcul des statistiques basiques (Reflex, Intel, Consti, etc...)
 
 ex:
@@ -28,7 +28,7 @@ ex:
   }
 ```
 
-Feuille de personnage pour le jeu de rôle Cyberpunk 2020.
+#### Feuille de personnage pour le jeu de rôle Cyberpunk 2020.
 Ceci permet de pouvoir y jouer sans devoir se rassembler (bien utile pour les joueurs habitant loin).
 Gestion complète de tous les aspect et jet de dés rencontré lors d'une partie classique sans pour autant tout automatisé afin de rester un maximum fidèle à l'expérience d'origine.
   Gestion de la barre de vie
