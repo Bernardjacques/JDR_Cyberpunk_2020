@@ -4,6 +4,7 @@
 Cyberpunk 2020 - Fiche de personnage interactive
 
 
+
 1.
 Cette fiche de personnage a pour but de faciliter les interactions (jets de dés, calculs) entre les joueurs d'une partie de jeu de rôle.
 
@@ -12,11 +13,18 @@ Outils mis à disposition
 
 2.1
 Jet de dé pour le calcul des statistiques basiques (Reflex, Intel, Consti, etc...)
+
+ex:
 ```javascript
   function dice_roll_10()
   {
       let random = Math.round(Math.random() * (10 - 1) + 1)
       return(random);
+  }
+  
+  function dice_REF()
+  {
+      document.getElementById("roll_ref").innerHTML = (dice_roll_10() + REF)
   }
 ```
 
