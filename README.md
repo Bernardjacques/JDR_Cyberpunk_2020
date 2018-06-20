@@ -8,11 +8,11 @@
 ### 1.
 Cette fiche de personnage a pour but de faciliter les interactions (jets de dés, calculs) entre les joueurs d'une partie de jeu de rôle.
 
-### 2.
-Outils mis à disposition
+### 2. Outils mis à disposition
 
-#### 2.1
-Jet de dé pour le calcul des statistiques basiques (Reflex, Intel, Consti, etc...)
+#### 2.1 Jet de dé pour le calcul des statistiques basiques (Reflex, Intel, Consti, etc...)
+
+> Les dés ne servent qu'à faire du bruit derrière l'écran du MJ - Gary Gygax
 
 ex:
 ```javascript
