@@ -41,7 +41,7 @@ ex:
 ```
 https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/dice_event.js
 
-### 2.2 Lancé de dé multiple avec addition de Bonus
+### 2.2 Lancé de dé multiple avec addition de Bonus // Calcul des Dégats Arme
 
 ex:
 ```javascript
@@ -93,3 +93,37 @@ function life_hit()
  .
 ```
 https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/hp_bar_gestion.js
+
+
+### 2.4 Gestion des Munitions
+
+```javascript
+let CDT_weapon = 3
+let chargeur = 9
+let left_ammo = 800
+
+document.getElementById("CDT_weapon").innerHTML = CDT_weapon;
+document.getElementById("chargeur").innerHTML = chargeur;
+document.getElementById("left_ammo").innerHTML = left_ammo;
+
+
+function tirer()
+{
+    if(chargeur >= CDT_weapon)
+    {
+        chargeur -= CDT_weapon
+        shoot()
+        document.getElementById("chargeur").innerHTML = chargeur;
+    }
+    else
+    {
+        left_ammo -= (9-chargeur)
+        chargeur += 9
+        document.getElementById("left_ammo").innerHTML = left_ammo;
+        document.getElementById("chargeur").innerHTML = chargeur;
+        alert("Rechargement Effectué");
+    }
+}
+```
+https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/weapon_event.js
+
