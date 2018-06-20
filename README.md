@@ -28,7 +28,6 @@ ex:
   }
 ```
 https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/dice_event.js
-JDR_Cyberpunk_2020/js/dice_event.js 
 
 #### Feuille de personnage pour le jeu de rôle Cyberpunk 2020.
 Ceci permet de pouvoir y jouer sans devoir se rassembler (bien utile pour les joueurs habitant loin).
