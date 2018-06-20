@@ -4,6 +4,18 @@
 ## Cyberpunk 2020 - Fiche de personnage interactive
 ![Preview of CyberPunk2020](https://raw.githubusercontent.com/Bernardjacques/JDR_Cyberpunk_2020/master/img/Preview_CyberPunk2020.png)
 
+Avancement :
+
+- [X] Lancés de dé simple (ex 1D10)
+- [X] Lancés de dés multiple avec Addition de Bonus (ex: [3D10+4])
+- [X] Gestion Bar de Vie
+- [X] Gestion des Munitions
+- [X] Calcul des dégats d'une arme
+- [X] Gestion d'Inventaire
+- [ ] Calcul jet de Compétence (ex: Reflexe = [Perception + 1d10+Ref])
+
+
+Détails du Projet : 
 
 ### 1.
 Cette fiche de personnage a pour but de faciliter les interactions (jets de dés, calculs) entre les joueurs d'une partie de jeu de rôle.
@@ -29,15 +41,4 @@ ex:
 ```
 https://github.com/Bernardjacques/JDR_Cyberpunk_2020/blob/master/js/dice_event.js
 
-#### Feuille de personnage pour le jeu de rôle Cyberpunk 2020.
-Ceci permet de pouvoir y jouer sans devoir se rassembler (bien utile pour les joueurs habitant loin).
-Gestion complète de tous les aspect et jet de dés rencontré lors d'une partie classique sans pour autant tout automatisé afin de rester un maximum fidèle à l'expérience d'origine.
-  Gestion de la barre de vie
-  Gestion de l'inventaire
-  Gestion des lancer de dés multiple avec bonus (ex : 2 dés 6 avec un bonus de +2)
 
-- [X] Lancé de dé simple (Stat)
-- [X] Gestion Bar de Vie
-- [X] Gestion des Munitions
-- [X] Calcul des dégats d'une arme
-- [ ]
